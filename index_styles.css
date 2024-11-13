@@ -48,7 +48,7 @@
     width: 160px; 
     height: 160px;
     line-height: 140px;
-  }
+}
   
   nav a:hover {
     background-color: #0c2720; 
@@ -96,7 +96,7 @@
   background-color: #255B4E; 
   color: #EFF8F1;
   border: none;
-  padding: 30px;
+  padding: 20px;
   border-radius: 50%;
   margin-top: 30px;
   margin-left: 30px;
@@ -128,9 +128,39 @@ footer {
     color: #EFF8F1;
   }
 
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
+  @media (max-width: 992px) {
+    nav a {
+        width: 130px;
+        height: 130px;
+        line-height: 110px;
+        font-size: 1rem;
     }
-  }
+}
+
+@media (max-width: 768px) {
+    nav a {
+        width: 100px;
+        height: 100px;
+        line-height: 80px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav a {
+        width: 80px;
+        height: 80px;
+        line-height: 60px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        width: 60px;
+        height: 60px;
+        line-height: 50px;
+        font-size: 0.7rem;
+        margin: 5px;
+    }
+}
