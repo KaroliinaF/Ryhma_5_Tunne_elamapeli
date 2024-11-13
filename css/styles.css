@@ -1,4 +1,12 @@
-/* General Styles */
+/* UI-suunnitelman mukainen väripaletti */
+:root {
+  --dark-green: #0C2720;    
+  --teal-green: #255B4E;    
+  --forest-green: #53816E;  
+  --mint-green: #CAECD2;   
+  --light-mint: #EFF8F1;    
+}
+
 * {
   margin: 0;
   padding: 0;
