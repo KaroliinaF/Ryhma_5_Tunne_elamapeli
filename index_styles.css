@@ -23,17 +23,19 @@
   
   nav {
     float: left;
-    width: 30%;
+    width: 20%;
     background: #caecd2;
-    align-items: center;
   }
-   
+  
   nav ul {
     list-style-type: none;
-    align-items: center;
     padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
+  
   nav a {
     text-decoration: none;
     color: #EFF8F1;
@@ -45,14 +47,25 @@
     text-align: center; 
     width: 160px; 
     height: 160px;
-    line-height: 150px; /* Tekstin keskittäminen pystysuunnassa */
+    line-height: 140px;
+  }
+  
+  nav a:hover {
+    background-color: #0c2720; 
+    color: #EFF8F1;
+  }
+  
+
+  nav a:hover {
+    background-color: #0c2720; 
+    color: #EFF8F1;
 }
 
   
   article {
     float: left;
     padding: 20px;
-    width: 70%;
+    width: 80%;
     background-color:  #EFF8F1;
   }
 
@@ -78,7 +91,23 @@
     min-height: 100vh; 
     display: flex; 
 }
-  
+
+.gameButton {
+  background-color: #255B4E; 
+  color: #EFF8F1;
+  border: none;
+  padding: 30px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.gameButton:hover {
+  background-color: #0c2720; 
+  color: #EFF8F1;
+}
+
+
 footer {
     background-color: #0c2720;
     text-align: center;
