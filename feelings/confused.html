@@ -3,30 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Ilo - Tunne-elämäpeli</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body id="confused-page">
+
+  
+
   <header>
     <h1>Tunteisiin</h1>
   </header>
   
   <nav>
     <ul>
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="token.html">Merkit</a></li>
-      <li><a href="info.html">Info</a></li>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
 
- 
+  <title>Hämmentävät Asiat Lapsille</title>
 
-  <footer>
-    <ul class="nav">
-      <li class="nav-item"><a href="index.html">Etusivu</a></li>
-      <li class="nav-item"><a href="token.html">Merkit</a></li>
-      <li class="nav-item"><a href="info.html">Info</a></li>
+  <body>
+    <h1>Mikä voi aiheuttaa hämmentymistä lapsessa?</h1>
+    <ul>
+      <li><strong>Odottamattomat muutokset rutiineissa:</strong> Jos lapsen päivittäiset rutiinit yhtäkkiä muuttuvat, kuten päiväkotipäivän rakenne tai perheen ruokailuajat, se voi olla hämmentävää, koska he tottuvat tiettyyn ennakoitavuuteen.</li>
+        <li><strong>Aikuisten ristiriitaiset viestit ja tunteet:</strong> Jos aikuinen sanoo jotain, mutta hänen ilmeensä tai käytöksensä kertoo toista, lapsi voi kokea hämmennystä. Esimerkiksi, jos joku sanoo olevansa iloinen, mutta näyttää surulliselta, se voi sekoittaa lapsen tunteita.</li>
+        <li><strong>Monimutkaiset sosiaaliset tilanteet:</strong> Erityisesti silloin, kun kyseessä on ryhmätilanne, lapsi voi hämmentyä esimerkiksi siitä, miksi jotkut lapset leikkivät yhdessä mutta eivät halua ottaa muita mukaan.</li>
+        <li><strong>Käyttäytymissäännöt eri tilanteissa:</strong> Kun lapsi kohtaa erilaisia odotuksia eri ympäristöissä (kuten kotona ja päiväkodissa), hän voi olla hämmentynyt siitä, mikä käytös on hyväksyttävää missäkin tilanteessa.</li>
+        <li><strong>Fantasia ja todellisuus:</strong> Sadut, fantasiatarinat ja mielikuvitushahmot voivat aiheuttaa hämmennystä, kun lapsi yrittää ymmärtää, mikä on totta ja mikä ei. Joskus lapset saattavat kysyä, onko joku hahmo oikeasti olemassa tai voivatko sadut tapahtua oikeasti.</li>
+        <li><strong>Kulttuurierot ja erilaiset tavat:</strong> Jos lapsi näkee muiden ihmisten toimivan tavoilla, jotka poikkeavat hänen omasta perheympäristöstään, se voi aiheuttaa hämmennystä. Esimerkiksi vieraat ruokailutavat, kieli tai tavat voivat tuntua oudolta ja vaikealta ymmärtää.</li>
+        <li><strong>Oman kehon reaktiot ja tunteet:</strong> Kun lapsi kokee voimakkaita tunteita, kuten pelkoa tai innostusta, tai fyysisiä reaktioita kuten väsymystä tai kiukkua, hän ei välttämättä täysin ymmärrä, miksi nämä tunteet syntyvät, mikä voi aiheuttaa hämmennystä.</li>
+        <li><strong>Luonnonilmiöt ja ympäristön muutokset:</strong> Suuret luonnonilmiöt, kuten ukkonen tai voimakkaat sateet, voivat aiheuttaa lapsessa hämmennystä, samoin kuin säätilan äkillinen muuttuminen.</li>
+        <li><strong>Uuden oppiminen, joka haastaa aiemman tiedon:</strong> Jos lapsi oppii jotain, mikä on ristiriidassa hänen aiemman ymmärryksensä kanssa (kuten se, että taivas ei ole oikeasti "sininen" vaan valo taittuu eri tavalla), se voi olla hämmentävää.</li>
+        <li><strong>Erilaiset kommunikaatiotavat ja sanonnat:</strong> Jos aikuinen käyttää sanontoja tai kielellisiä ilmaisuja, joita lapsi ei täysin ymmärrä, kuten "pitää jalat maassa" tai "ollaan kuin kaksi marjaa," lapsi voi hämmentyä sanojen merkityksestä.</li>
     </ul>
-    <p id="footerText">© 2024 Tunne-elämäpeli</p>
-  </footer>
+</body>
+
+<h1>Hämmennyksen Aiheet - Peli</h1>
+<p>Ruksaa kohdat, jotka tunnet tai ymmärrät, ja kerää pisteitä!</p>
+
+<ul id="toDoList">
+  <ul id="toDoList">
+    <li><input type="checkbox" id="task1" onclick="updatePoints(this, 'task1')"> Odottamattomat muutokset rutiineissa</li>
+    <li><input type="checkbox" id="task2" onclick="updatePoints(this, 'task2')"> Aikuisten ristiriitaiset viestit ja tunteet</li>
+    <li><input type="checkbox" id="task3" onclick="updatePoints(this, 'task3')"> Monimutkaiset sosiaaliset tilanteet</li>
+    <li><input type="checkbox" id="task4" onclick="updatePoints(this, 'task4')"> Käyttäytymissäännöt eri tilanteissa</li>
+    <li><input type="checkbox" id="task5" onclick="updatePoints(this, 'task5')"> Fantasia ja todellisuus</li>
+    <li><input type="checkbox" id="task6" onclick="updatePoints(this, 'task6')"> Kulttuurierot ja erilaiset tavat</li>
+    <li><input type="checkbox" id="task7" onclick="updatePoints(this, 'task7')"> Oman kehon reaktiot ja tunteet</li>
+    <li><input type="checkbox" id="task8" onclick="updatePoints(this, 'task8')"> Luonnonilmiöt ja ympäristön muutokset</li>
+    <li><input type="checkbox" id="task9" onclick="updatePoints(this, 'task9')"> Uuden oppiminen, joka haastaa aiemman tiedon</li>
+    <li><input type="checkbox" id="task10" onclick="updatePoints(this, 'task10')"> Erilaiset kommunikaatiotavat ja sanonnat</li>
+</ul>
+
+<p class="score">Pisteet: <span id="points">0</span> / 10</p>
+
+<footer>
+  <ul class="nav">
+    <li class="nav-item"><a href="../index.html">Etusivu</a></li>
+    <li class="nav-item"><a href="../token.html">Merkit</a></li>
+    <li class="nav-item"><a href="../info.html">Info</a></li>
+  </ul>
+  <p id="footerText">© 2024 Tunne-elämäpeli</p>
+</footer>
+
+
+  <script src="../script/confused.js"></script>
+
 </body>
 </html>
