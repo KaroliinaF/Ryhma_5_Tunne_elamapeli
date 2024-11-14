@@ -200,3 +200,13 @@ footer a {
 .token p {
   font-size: 1.1rem;
 }
+
+.badge-img {
+  filter: grayscale(80%); /* Kuva himmeänä aluksi */
+  transition: filter 0.3s ease;
+}
+
+.badge-img.active {
+  filter: grayscale(0%); /* Täysi väri, kun pisteet saavutettu */
+}
+
