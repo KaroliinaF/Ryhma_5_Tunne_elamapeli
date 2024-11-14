@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ilo - Tunne-elämäpeli</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tunteisiin</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <section id="story-section">
+      <h2>Tarinaa tunteeseen liittyen</h2>
+      <p id="story">Olen yksin kotona ensimmäistä kertaa ja kuulen erikoisia ääniä. Ihan kuin jokin koputtaisi ikkunaan. Jokin surisee...</p>
+    </section>
+
+    <section id="choice-section">
+      <h3>Voinko soittaa vanhemmilleni?</h3>
+      <button class="choice-button wrong" onclick="handleChoice(false)">Väärin</button>
+      <button class="choice-button correct" onclick="handleChoice(true)">Oikein</button>
+    </section>
+
+    <section id="feedback-section" style="display: none;">
+      <p id="feedback-text"></p>
+    </section>
+  </article>
+
+
+  <footer>
+    <ul class="nav">
+      <li class="nav-item"><a href="../index.html">Etusivu</a></li>
+      <li class="nav-item"><a href="../token.html">Merkit</a></li>
+      <li class="nav-item"><a href="../info.html">Info</a></li>
+    </ul>
+    <p id="footerText">© 2024 Tunne-elämäpeli</p>
+  </footer>
+
+  <script src="../script/fear"></script>
+
+</body>
+</html>
