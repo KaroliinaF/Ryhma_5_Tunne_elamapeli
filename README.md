@@ -2,7 +2,7 @@
 
 Kirjoitathan tähän alle nimesi ja Githubin nimimerkkisi:
 
-Karoliina Fernandes, Githubin nimimerkki: KaroliinaF
+Karoliina Fernandes, KaroliinaF
 
 Johanna Herranen, joqquli
 
