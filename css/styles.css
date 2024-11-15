@@ -75,6 +75,13 @@ article {
   background-color: #EFF8F1;
 }
 
+/* Info Page Content */
+
+.info-p {
+  margin-bottom: 20px; 
+  line-height: 1.6; 
+}
+
 /* Home Page Content */
 #animals {
   display: flex; 
