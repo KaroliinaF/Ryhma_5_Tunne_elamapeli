@@ -179,6 +179,14 @@ footer a {
 
 /* Page-Specific Styles */
 
+/* Happy-page */
+
+#cardsGame {
+  padding: 20px;
+  background-color: #EFF8F1;
+}
+
+
 /* Token Page Styles */
 .token-grid {
   display: flex;
