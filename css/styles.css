@@ -192,6 +192,28 @@ footer a {
   background-color: #EFF8F1;
 }
 
+#cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 200px;
+  height: auto; /* kortin korkeuden dynaamiseksi */
+  border: 2px solid #0c2720;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* Token Page Styles */
 .token-grid {
