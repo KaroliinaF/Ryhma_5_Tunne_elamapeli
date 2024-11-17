@@ -1,4 +1,4 @@
-# Tunne-elämäpeli
+# Tunne-elämäpeli, Tunteisiin (kouluprojekti)
 
 Tunne-elämäpeli on verkkosovellus, jonka tarkoituksena on auttaa käyttäjiä – erityisesti alakouluikäisiä lapsia – tunnistamaan ja käsittelemään erilaisia tunteita interaktiivisten tehtävien ja tarinoiden avulla. Sovellus yhdistää pelillistämisen ja tunnetaitojen harjoittelun tarjoamalla käyttäjille mahdollisuuden ansaita pisteitä ja tunnusmerkkejä eri tunneaiheisiin liittyvistä harjoituksista.
 
