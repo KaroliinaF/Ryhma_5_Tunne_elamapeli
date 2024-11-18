@@ -201,7 +201,7 @@ footer a {
 
 .card {
   width: 200px;
-  height: auto; /* kortin korkeuden dynaamiseksi */
+  height: auto;
   border: 2px solid #0c2720;
   border-radius: 10px;
   overflow: hidden;
@@ -213,7 +213,6 @@ footer a {
   height: auto;
   display: block;
 }
-
 
 /* Token Page Styles */
 .token-grid {

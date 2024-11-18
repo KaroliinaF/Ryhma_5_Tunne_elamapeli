@@ -9,7 +9,7 @@
   <header>
     <h1>Tunteisiin</h1>
   </header>
-  
+  <!--Nav -->  
   <nav>
     <ul>
       <li><a href="../index.html">Etusivu</a></li>
@@ -17,18 +17,20 @@
       <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
+ <!--Article -->   
   <article id="cardsGame">
-  <h2>Tunnistetaan kuvista ilo!</h2>
-  <p>Valitse kahdesta kuvasta: jokaisesta kuvaparista on oma kysymyksensä,
-    jonka perusteella valitaan väittämää vastaava kuva. Nyt pelaamaan!</p><br>
-  <p></p>  
-  <div id="cards">
-    <div class="card"><img src="../images/happy_animals1.png" alt="Kuva 1"></div>
-    <div class="card"><img src="../images/happy_animals2.png" alt="Kuva 2"></div>
-  </div>
+    <h2>Tunnistetaan kuvista ilo!</h2>
+    <p>Valitse kahdesta kuvasta: jokaisesta kuvaparista on oma kysymyksensä,
+      jonka perusteella valitaan väittämää vastaava kuva. Nyt pelaamaan!</p><br>
+    <div id="questionContainer">
+      <p id="question"></p>
+    </div> 
+    <div id="cards">
+      <div class="card" id="card1"><img src="../images/happy_animals1.png" alt="Kuva 1"></div>
+      <div class="card" id="card2"><img src="../images/happy_animals2.png" alt="Kuva 2"></div>
+    </div>
   </article>
-
-
+<!-- Footer -->  
   <footer>
     <ul class="nav">
       <hr>
@@ -38,5 +40,7 @@
     </ul>
     <p id="footerText">© 2024 Tunne-elämäpeli</p>
   </footer>
+
+  <script src="../script/happy.js"></script>
 </body>
 </html>
