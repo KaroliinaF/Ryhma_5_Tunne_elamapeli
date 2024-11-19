@@ -89,18 +89,29 @@ function showSummary() {
     const questionContainer = document.getElementById("questionContainer");
     const cards = document.getElementById("cards");
 
-    // Kuvien ja kysymysten piilottaminen näytöltä
+    // PKysymykset ja kuvat piiloon
     questionContainer.style.display = "none";
     cards.style.display = "none";
 
-    // Yhteenvedon luonti
+    // Yhteenveto
     const summary = document.createElement("div");
     summary.innerHTML = `
-        <h2>Hienoa! Pääsit pelin loppuun ja saat iloisen koiramerkin merkit sivulle.</h2>
-        <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä. 
-        Se tuo ihmisiä yhteen ja vahvistaa ystävyyksiä. Ilo myös auttaa meitä huomaamaan, mikä tekee elämästä erityistä ja arvokasta.</p>
+        <h2>Hienoa! Pääsit pelin loppuun.</h2>
+        <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä.</p>
+        <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px;">
+        <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
     `;
     document.querySelector("article").appendChild(summary);
+
+    // Pelaa uudelleen-nappi
+    document.getElementById("playAgain").onclick = () => {
+        currentQuestionIndex = 0;
+        questionContainer.style.display = "block";
+        cards.style.display = "flex";
+        summary.remove(); 
+        loadQuestion(); // pelin uudelleen käynnistys
+    };
 }
+
 // Pelin lataus heti sivun avautuessa
 document.addEventListener("DOMContentLoaded", loadQuestion);
