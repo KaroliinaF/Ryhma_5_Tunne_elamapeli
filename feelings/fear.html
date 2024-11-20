@@ -2,14 +2,15 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <title>Ilo - Tunne-elämäpeli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelko - Tunne-elämäpeli</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Tunteisiin</h1>
+    <h1>Tunteisiin - Pelko</h1>
   </header>
-  
+
   <nav>
     <ul>
       <li><a href="../index.html">Etusivu</a></li>
@@ -19,33 +20,39 @@
   </nav>
 
   <article>
-    <section id="story-section">
-      <h2>Tarinaa tunteeseen liittyen</h2>
-      <p id="story">Olen yksin kotona ensimmäistä kertaa ja kuulen erikoisia ääniä. Ihan kuin jokin koputtaisi ikkunaan. Jokin surisee...</p>
-    </section>
+    <div id="fear-container">
+      <section id="fear-story-section">
+        <h2 id="fear-title"></h2>
+        <img id="fear-story-image" src="" alt="Tarinaan liittyvä kuva" style="display: none;" />
+        <p id="fear-story"></p>
+      </section>
 
-    <section id="choice-section">
-      <h3>Voinko soittaa vanhemmilleni?</h3>
-      <button class="choice-button wrong" onclick="handleChoice(false)">Väärin</button>
-      <button class="choice-button correct" onclick="handleChoice(true)">Oikein</button>
-    </section>
-
-    <section id="feedback-section" style="display: none;">
-      <p id="feedback-text"></p>
-    </section>
+      <section id="fear-choice-section">
+        <h3 id="fear-question">Valinta</h3>
+        <button class="fear-choice-button wrong" onclick="handleChoice(false)">Väärin</button>
+        <button class="fear-choice-button correct" onclick="handleChoice(true)">Oikein</button>
+      </section>
+    </div>
   </article>
 
+  <div id="fear-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <p id="fear-feedback-text"></p>
+      <img id="fear-feedback-image" src="" alt="" style="display: none;">
+      <button id="fear-next-button" onclick="loadNextQuestion()" style="display: none;">Seuraava kysymys</button>
+    </div>
+  </div>
 
   <footer>
     <ul class="nav">
       <li class="nav-item"><a href="../index.html">Etusivu</a></li>
       <li class="nav-item"><a href="../token.html">Merkit</a></li>
-      <li class="nav-item"><a href="../info.html">Info</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
     <p id="footerText">© 2024 Tunne-elämäpeli</p>
   </footer>
 
-  <script src="../script/fear"></script>
-
+  <script src="../script/fear.js"></script>
 </body>
 </html>
