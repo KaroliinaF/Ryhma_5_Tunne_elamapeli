@@ -37,7 +37,6 @@ const cardGameData = [
     },
 ];
 
-// Alustetaan pelin kysymysten laskuri
 let currentQuestionIndex = 0;
 
 // Seuraavat kysymykset ja kuvat näytölle
@@ -73,24 +72,20 @@ function handleAnswer(selectedImage) {
 
     const feedbackElement = document.getElementById("happyFeedback");
 
-    // Onko vastaus oikein
     if (selectedImage.correct) {
         pointsJoy += 2;
-        if (pointsJoy > 10) pointsJoy = 10; // 10p maksimi raja!
+        if (pointsJoy > 10) pointsJoy = 10;
         feedbackElement.textContent = "Oikein, mahtavaa!";
         feedbackElement.style.color = "green";
     } else {
-        // Väärä vastaus
         feedbackElement.textContent = "Väärin, parempi onni ensi kerralla.";
         feedbackElement.style.color = "black";
     }
 
-    // Happy pelin pisteiden tallennus
     localStorage.setItem("points-joy", pointsJoy);
 
     currentQuestionIndex++;
 
-    // 
     if (currentQuestionIndex >= cardGameData.length) {
         setTimeout(() => {
             feedbackElement.textContent = "";
@@ -106,15 +101,18 @@ function showSummary() {
     const questionContainer = document.getElementById("questionContainer");
     const cards = document.getElementById("cards");
 
-    // Kysymysten ja kuvien piilotus
     questionContainer.style.display = "none";
     cards.style.display = "none";
 
     // Happy pelin pisteiden haku
     const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
 
+    // Estetään ettei yhteenveto tulostu näytölle montaa kertaa
+    if (document.getElementById("summary")) return;
+
     // Yhteenveto
     const summary = document.createElement("div");
+    summary.id = "summary";
     summary.innerHTML = `
         <h2>Hienoa! Pääsit pelin loppuun.</h2>
         <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä. 
@@ -127,12 +125,11 @@ function showSummary() {
 
     // Pelaa uudelleen-nappi
     document.getElementById("playAgain").onclick = () => {
-        // Pisteiden nollaus, jos pelataan uudelleen:
         localStorage.setItem("points-joy", 0);
         currentQuestionIndex = 0;
         questionContainer.style.display = "block";
         cards.style.display = "flex";
-        summary.remove(); 
+        summary.remove();
         loadQuestion();
     };
 }

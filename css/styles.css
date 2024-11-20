@@ -126,23 +126,41 @@ section {
 /* Footer */
 footer {
   background-color: #0c2720;
-  text-align: center;
   color: #EFF8F1;
   width: 100%;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#footerText {
-  color: #EFF8F1;
+footer .nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 footer .nav-item {
-  padding: 10px;
+  margin: 0 15px;
 }
 
 footer a {
   text-decoration: none;
   color: #EFF8F1;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #EFF8F1;
+  margin: 20px 0;
+  width: 80%;
+}
+
+#footerText {
+  color: #EFF8F1;
+  margin-top: 10px;
 }
 
 /* Responsive Design */
