@@ -134,14 +134,16 @@ function closeModal() {
 function loadNextQuestion() {
   const storyElement = document.getElementById("fear-story");
   const titleElement = document.getElementById("fear-title");
+  const questionElement = document.getElementById("fear-question");
   const imageElement = document.getElementById("fear-story-image");
 
   if (currentQuestionIndex < questions.length) {
     const currentQuestion = questions[currentQuestionIndex];
 
-    // Päivitä otsikko, tarina ja kuva
+    // Päivitä otsikko, tarina, kuva ja kysymys
     titleElement.textContent = currentQuestion.title;
     storyElement.textContent = currentQuestion.story;
+    questionElement.textContent = currentQuestion.question; // Päivitä "Valinta"-teksti
 
     if (currentQuestion.image) {
       imageElement.src = currentQuestion.image;
