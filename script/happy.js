@@ -68,19 +68,36 @@ function loadQuestion() {
 
 // Vastauksen käsittely
 function handleAnswer(selectedImage) {
+    // Nykyisten pisteiden haku localStoragesta
+    let pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
+
+    const feedbackElement = document.getElementById("happyFeedback");
+
+    // Onko vastaus oikein
     if (selectedImage.correct) {
-        alert("Oikein, mahtavaa!");
+        pointsJoy += 2;
+        if (pointsJoy > 10) pointsJoy = 10; // 10p maksimi raja!
+        feedbackElement.textContent = "Oikein, mahtavaa!";
+        feedbackElement.style.color = "green";
     } else {
-        alert("Väärin, parempi onni ensi kerralla.");
+        // Väärä vastaus
+        feedbackElement.textContent = "Väärin, parempi onni ensi kerralla.";
+        feedbackElement.style.color = "black";
     }
+
+    // Happy pelin pisteiden tallennus
+    localStorage.setItem("points-joy", pointsJoy);
 
     currentQuestionIndex++;
 
-    // Jatketaanko vai pääteäänkö peli
-    if (currentQuestionIndex < cardGameData.length) {
-        loadQuestion();
+    // 
+    if (currentQuestionIndex >= cardGameData.length) {
+        setTimeout(() => {
+            feedbackElement.textContent = "";
+            showSummary();
+        }, 1000);
     } else {
-        showSummary();
+        loadQuestion();
     }
 }
 
@@ -89,27 +106,34 @@ function showSummary() {
     const questionContainer = document.getElementById("questionContainer");
     const cards = document.getElementById("cards");
 
-    // PKysymykset ja kuvat piiloon
+    // Kysymysten ja kuvien piilotus
     questionContainer.style.display = "none";
     cards.style.display = "none";
+
+    // Happy pelin pisteiden haku
+    const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
 
     // Yhteenveto
     const summary = document.createElement("div");
     summary.innerHTML = `
         <h2>Hienoa! Pääsit pelin loppuun.</h2>
-        <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä.</p>
+        <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä. 
+        Se tuo ihmisiä yhteen ja vahvistaa ystävyyksiä. Ilo myös auttaa meitä huomaamaan, mikä tekee elämästä erityistä ja arvokasta.</p>
         <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px;">
+        <p>Pisteet: ${pointsJoy}/10</p> <!-- Tämä näyttää vain ilon pisteet -->
         <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
     `;
     document.querySelector("article").appendChild(summary);
 
     // Pelaa uudelleen-nappi
     document.getElementById("playAgain").onclick = () => {
+        // Pisteiden nollaus, jos pelataan uudelleen:
+        localStorage.setItem("points-joy", 0);
         currentQuestionIndex = 0;
         questionContainer.style.display = "block";
         cards.style.display = "flex";
         summary.remove(); 
-        loadQuestion(); // pelin uudelleen käynnistys
+        loadQuestion();
     };
 }
 
