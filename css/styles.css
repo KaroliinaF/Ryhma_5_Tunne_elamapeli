@@ -1,4 +1,12 @@
-/* General Styles */
+/* UI-suunnitelman mukainen väripaletti */
+:root {
+  --dark-green: #0C2720;    
+  --teal-green: #255B4E;    
+  --forest-green: #53816E;  
+  --mint-green: #CAECD2;   
+  --light-mint: #EFF8F1;    
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -169,70 +177,149 @@ footer a {
   }
 }
 
+
 /* Page-Specific Styles */
 
- /* Sadness */
-
-/* png symbols */
-.gameSymbols {
+/* game title */
+#game-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-green);
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+ 
+/* sad container */
+#sad-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
-/* Symbol aligment */
-.gamesymbol-container {
+/* sad symbol container */
+#sad-symbol-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   justify-items: center;
-  padding: 20px;
-  margin-top: 20px;
-  width: 100%;
+  background-color: #EFF8F1;
+  padding: 30px;
+  border-radius: 15px;
+  width: 230%;
+  height: 60%;
+  margin-bottom: 15px; 
 }
 
-.sad_symbol {
-  width: 80px;
-  height: 80px;
+/* Symbols */
+.symbol {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
   cursor: pointer;
-  transition: transform 0.2s;
   border-radius: 50%;
 }
 
-.sad_symbol:hover {
+.symbol:hover {
   transform: scale(1.1);
+ 
 }
 
-.sad_instruction-box {
-  background-color: #caecd2;
-  border: 2px solid #0c2720;
-  border-radius: 15px;
-  padding: 10px 15px;
+/* instruction box */
+#sad-instruction-box {
+  background-color: var(--light-mint);
+  border: 2px solid var(--dark-green);
+  border-radius: 10px;
+  padding: 15px 20px;
   text-align: center;
-  font-size: 1rem;
-  color: #0c2720;
-  width: 60%; 
-  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--dark-green);
+  width: 100%;
+  margin-top: 10px;
 }
+
+/* feedback box */
+#sad-feedback-box {
+  background-color: var(--light-mint);
+  border: 2px solid var(--dark-green);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: var(--dark-green);
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#sad-feedback-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#sad-feedback-box p {
+  font-size: 1rem;
+  color: #333;
+}
+
 
 /* Token Page Styles */
-.token-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+
+.token-grid-container {
+  text-align: center;
+  max-width: 600px; 
+  margin: 0 auto;
 }
 
+/* Otsikon hienosäätö */
+.token-grid-container h2 {
+  margin: 0 auto 20px; 
+  font-size: 1.8rem;
+  color: #0c2720;
+}
+
+/* Grid-layout */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  max-width: 600px; 
+}
+
+/* Token-kuvat ja tekstit */
 .token {
   text-align: center;
-  width: 120px;
 }
 
 .token img {
-  width: 100px;
-  height: auto;
+  width: 180px; 
+  height: 180px;
+  border-radius: 50%; 
+  transition: transform 0.2s; /* Hover-efekti */
+}
+
+.token img:hover {
+  transform: scale(1.1); 
 }
 
 .token p {
-  font-size: 1.1rem;
+  margin-top: 10px;
+  font-size: 1.2rem; 
+  color: #0c2720;
 }
+
+.badge-img {
+  filter: grayscale(80%); /* Kuva himmeänä aluksi */
+  transition: filter 0.3s ease;
+}
+
+.badge-img.active {
+  filter: grayscale(0%); /* Täysi väri, kun pisteet saavutettu */
+}
+
+
+
