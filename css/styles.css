@@ -249,6 +249,36 @@ footer hr {
   color: #EFF8F1;
 }
 
+#startGame {
+  background-color: #255B4E; 
+  color: #EFF8F1;
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#startGame:hover {
+  background-color: #0c2720; 
+  color: #EFF8F1;
+}
+#happyDog {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#happyDog img {
+  max-width: 300px;
+  height: auto;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+
 /* Token Page Styles */
 
 .token-grid-container {

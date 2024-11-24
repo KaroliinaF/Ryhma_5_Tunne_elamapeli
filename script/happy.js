@@ -38,8 +38,23 @@ const cardGameData = [
 ];
 
 let currentQuestionIndex = 0;
+let summaryShown = false;
 
-// Seuraavat kysymykset ja kuvat näytölle
+function startGame() {
+    localStorage.setItem("points-joy", 0); 
+    currentQuestionIndex = 0; 
+    summaryShown = false;
+
+    document.getElementById("startGame").style.display = "none"; 
+    document.getElementById("questionContainer").style.display = "block"; 
+    document.getElementById("cards").style.display = "flex"; 
+
+    document.getElementById("happyDog").style.display = "none";
+
+    loadQuestion();
+}
+
+
 function loadQuestion() {
     const questionData = cardGameData[currentQuestionIndex];
 
@@ -49,25 +64,30 @@ function loadQuestion() {
     const card1 = document.getElementById("card1");
     const card2 = document.getElementById("card2");
 
-    card1.innerHTML = "";
+    // Poista vanhat tapahtumakuuntelijat
+    card1.replaceWith(card1.cloneNode(true));
+    card2.replaceWith(card2.cloneNode(true));
+
+    const newCard1 = document.getElementById("card1");
+    const newCard2 = document.getElementById("card2");
+
+    newCard1.innerHTML = "";
     const img1 = document.createElement("img");
     img1.src = `../images/${questionData.images[0].src}`;
     img1.alt = "Kuva 1";
-    card1.appendChild(img1);
+    newCard1.appendChild(img1);
 
-    card2.innerHTML = "";
+    newCard2.innerHTML = "";
     const img2 = document.createElement("img");
     img2.src = `../images/${questionData.images[1].src}`;
     img2.alt = "Kuva 2";
-    card2.appendChild(img2);
+    newCard2.appendChild(img2);
 
-    card1.onclick = () => handleAnswer(questionData.images[0]);
-    card2.onclick = () => handleAnswer(questionData.images[1]);
+    newCard1.onclick = () => handleAnswer(questionData.images[0]);
+    newCard2.onclick = () => handleAnswer(questionData.images[1]);
 }
 
-// Vastauksen käsittely
 function handleAnswer(selectedImage) {
-    // Nykyisten pisteiden haku localStoragesta
     let pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
 
     const feedbackElement = document.getElementById("happyFeedback");
@@ -85,54 +105,105 @@ function handleAnswer(selectedImage) {
     localStorage.setItem("points-joy", pointsJoy);
 
     currentQuestionIndex++;
-
     if (currentQuestionIndex >= cardGameData.length) {
         setTimeout(() => {
-            feedbackElement.textContent = "";
-            showSummary();
+            if (!summaryShown) {
+                showSummary();
+            }
         }, 1000);
     } else {
         loadQuestion();
     }
 }
 
-// Pelin yhteenveto näytölle
 function showSummary() {
-    const questionContainer = document.getElementById("questionContainer");
-    const cards = document.getElementById("cards");
+    if (summaryShown) return;
+    summaryShown = true;
 
-    questionContainer.style.display = "none";
-    cards.style.display = "none";
+    document.getElementById("questionContainer").style.display = "none";
+    document.getElementById("cards").style.display = "none";
 
-    // Happy pelin pisteiden haku
+    const feedbackElement = document.getElementById("happyFeedback");
+    feedbackElement.innerHTML = "";
+
     const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
 
-    // Estetään ettei yhteenveto tulostu näytölle montaa kertaa
-    if (document.getElementById("summary")) return;
-
-    // Yhteenveto
+    // Yhteenvedon luonti
     const summary = document.createElement("div");
     summary.id = "summary";
     summary.innerHTML = `
-        <h2>Hienoa! Pääsit pelin loppuun.</h2>
-        <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä. 
-        Se tuo ihmisiä yhteen ja vahvistaa ystävyyksiä. Ilo myös auttaa meitä huomaamaan, mikä tekee elämästä erityistä ja arvokasta.</p>
-        <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px;">
-        <p>Pisteet: ${pointsJoy}/10</p> <!-- Tämä näyttää vain ilon pisteet -->
-        <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
+      <h2>Hienoa! Pääsit pelin loppuun.</h2>
+      <p>Ilo on tärkeä tunne, joka auttaa meitä olemaan onnellisia ja vähentää stressiä. 
+      Se tuo ihmisiä yhteen ja vahvistaa ystävyyksiä. Ilo myös auttaa meitä huomaamaan, mikä tekee elämästä erityistä ja arvokasta.</p>
+      <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px; ${
+        pointsJoy < 10 ? "filter: grayscale(100%);" : "filter: none;"
+      }">
+      <p>Pisteet: ${pointsJoy}/10</p>
+      <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
     `;
     document.querySelector("article").appendChild(summary);
 
-    // Pelaa uudelleen-nappi
-    document.getElementById("playAgain").onclick = () => {
+    document.getElementById("playAgain").addEventListener("click", () => {
         localStorage.setItem("points-joy", 0);
         currentQuestionIndex = 0;
-        questionContainer.style.display = "block";
-        cards.style.display = "flex";
+        summaryShown = false;
+        document.getElementById("questionContainer").style.display = "block";
+        document.getElementById("cards").style.display = "flex";
+
         summary.remove();
+
         loadQuestion();
-    };
+    });
 }
 
-// Pelin lataus heti sivun avautuessa
-document.addEventListener("DOMContentLoaded", loadQuestion);
+document.addEventListener("DOMContentLoaded", () => {
+    resetGameView();
+});
+
+function resetGameView() {
+    const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
+
+    if (pointsJoy === 10) {
+        document.getElementById("startGame").style.display = "none";
+        document.getElementById("happyDog").style.display = "none";
+        const feedbackElement = document.getElementById("happyFeedback");
+        feedbackElement.innerHTML = `
+            <p style="color: green; font-size: 1.2rem;">Olet jo saavuttanut täydet pisteet!</p>
+            <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px;">
+            <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
+        `;
+
+        document.getElementById("playAgain").addEventListener("click", () => {
+            localStorage.setItem("points-joy", 0);
+            currentQuestionIndex = 0;
+            document.getElementById("happyFeedback").innerHTML = "";
+            document.getElementById("questionContainer").style.display = "none";
+            document.getElementById("cards").style.display = "none";
+            document.getElementById("startGame").style.display = "block";
+            document.getElementById("happyDog").style.display = "block";
+        });
+    } else {
+        document.getElementById("startGame").style.display = "block";
+        document.getElementById("happyDog").style.display = "block";
+        document.getElementById("questionContainer").style.display = "none";
+        document.getElementById("cards").style.display = "none";
+        document.getElementById("happyFeedback").innerHTML = "";
+    }
+}
+
+
+function startGame() {
+    localStorage.setItem("points-joy", 0); 
+    currentQuestionIndex = 0; 
+    summaryShown = false;
+
+    document.getElementById("startGame").style.display = "none"; 
+    document.getElementById("questionContainer").style.display = "block"; 
+    document.getElementById("cards").style.display = "flex"; 
+
+    document.getElementById("happyDog").style.display = "none";
+
+    loadQuestion();
+}
+
+document.getElementById("startGame").addEventListener("click", startGame);
