@@ -22,20 +22,21 @@ document.querySelectorAll('.symbol').forEach((symbol) => {
      
       document.getElementById("sad-game-score").textContent = sadGameScore.toFixed(1);
 
-      // localstorage
-      localStorage.setItem('points-sadness', sadGameScore); 
+      console.log("Saving sadness score:", sadGameScore);
+      localStorage.setItem('points-sadness', sadGameScore);
 
-      // max score
+   
       if (sadGameScore === 10) {
         sadGameFeedbackBox.querySelector("h2").textContent = "Onnittelut!";
         sadGameFeedbackBox.querySelector("p").textContent = "Voitit pelin ja ansaitsit merkin!";
-        
-        // save max score
-        localStorage.setItem('points-sadness', 10); 
+
+        // localstorage
+        localStorage.setItem('points-sadness', 10);
+        console.log("Max score saved as 10.");
 
         // to token page
         setTimeout(() => {
-          window.location.href = 'token.html';
+          window.location.href = '../token.html';
         }, 2000); 
       }
     } else if (!isCorrectSymbol) {
