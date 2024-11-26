@@ -235,3 +235,58 @@ footer a {
 .badge-img.active {
   filter: grayscale(0%); /* Täysi väri, kun pisteet saavutettu */
 }
+
+/* disgust */
+.header-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #0c2720;
+  color: #EFF8F1;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+.image-box {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px;
+}
+.image-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.answers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.answer {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.answer:hover {
+  background: #eaeaea;
+  transform: scale(1.05);
+}
+
