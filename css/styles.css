@@ -1,12 +1,4 @@
-/* UI-suunnitelman mukainen väripaletti */
-:root {
-  --dark-green: #0C2720;    
-  --teal-green: #255B4E;    
-  --forest-green: #53816E;  
-  --mint-green: #CAECD2;   
-  --light-mint: #EFF8F1;    
-}
-
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -179,30 +171,249 @@ footer a {
 
 /* Page-Specific Styles */
 
-/* Token Page Styles */
-.token-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+/* Fear Page Styles */
+
+#story-section {
+  border: 2px solid #ffa500;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
+/* Choice Section */
+#choice-section {
+  border: 2px solid #0000ff;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.choice-button {
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+.choice-button.correct {
+  background-color: #00a000;
+  color: white;
+}
+
+.choice-button.wrong {
+  background-color: #d10000;
+  color: white;
+}
+
+/* Feedback Section */
+#feedback-section {
+  border: 2px solid #ffa500;
+  padding: 15px;
+  margin-top: 20px;
+  display: none; 
+}
+
+/* Token Page Styles */
+
+
+.token-grid-container {
+  text-align: center;
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+/* Otsikon hienosäätö */
+.token-grid-container h2 {
+  margin: 0 auto 20px; 
+  font-size: 1.8rem;
+  color: #0c2720;
+}
+
+/* Grid-layout */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  max-width: 600px; 
+}
+
+/* Token-kuvat ja tekstit */
 .token {
   text-align: center;
-  width: 120px;
 }
 
 .token img {
-  width: 100px;
-  height: auto;
+  width: 250px; 
+  height: 250px;
+  transition: transform 0.5s; 
+}
+
+.token img:hover {
+  transform: scale(1.5); 
 }
 
 .token p {
-  font-size: 1.1rem;
+  margin-top: 10px;
+  font-size: 1.2rem; 
+  color: #0c2720;
 }
+
+.badge-img {
+  filter: grayscale(80%); 
+  transition: filter 0.3s ease;
+}
+
+.badge-img.active {
+  filter: grayscale(0%); 
+}
+
+/* Confused Page Styles */
+
+#confused-instruction {
+  font-size: 1.5rem; 
+  color: #0c2720; 
+  margin-bottom: 40px; 
+  text-align: center; 
+}
+
+/* Kontainerit */
+.speed-game-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;  
+}
+
+/* Pallot */
+.speed-balls-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.ball {
+  width: 200px;
+  height: 200px;
+  background-color: #255B4E;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ball img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; 
+}
+
+.ball.active {
+  background-color: white; 
+  transform: scale(1.1);
+}
+
+.ball.active img {
+  display: block; 
+}
+
+/* Käynnistä-painike */
+.start-button-container {
+  margin-top: 30px;
+}
+
+.start-button {
+  padding: 20px 60px;
+  font-size: 1.2rem;
+  background-color: #255B4E;
+  color: #EFF8F1;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0c2720;
+}
+
+/* Pisteet ja palaute */
+#score, #feedback {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #0c2720;
+  text-align: center; 
+}
+
+
+/* Modalin tausta */
+#confused-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  visibility: hidden; 
+  opacity: 0; 
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+#confused-modal.visible {
+  visibility: visible; 
+  opacity: 1;
+}
+
+/* Modalin sisältö */
+#confused-modal .modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 80%; 
+}
+
+#confused-modal-message {
+  font-size: 1.2rem;
+  color: #0c2720;
+  margin-bottom: 20px;
+}
+
+/* Jatka-painike */
+#confused-continue-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #255B4E;
+  color: #EFF8F1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#confused-continue-button:hover {
+  background-color: #0c2720;
+}
+
 
 /* Fear Page Specific Styles */
 
+/* Kontainer vierekkäisille osioille */
 #fear-container {
   display: flex; 
   gap: 20px; 
@@ -234,13 +445,13 @@ footer a {
 }
 
 #fear-story-section h2 {
-  margin-bottom: 40px; /* Väli otsikon ja tekstin välillä */
+  margin-bottom: 40px; 
   color: #0C2720;
   font-size: 1.5rem;
 }
 
 #fear-story-section p {
-  margin-bottom: 90px; /* Väli tekstin ja muiden elementtien välillä */
+  margin-bottom: 90px; 
   font-size: 1rem;
   color: #0C2720;
 }
@@ -283,13 +494,13 @@ footer a {
 }
 
 .fear-choice-button:hover {
-  transform: scale(1.1); /* Hover-efekti: hieman suurenee */
+  transform: scale(1.1); 
   opacity: 0.9;
 }
 
 /* Modal */
 .modal {
-  display: none; /* Piilotetaan oletuksena */
+  display: none; 
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -308,10 +519,10 @@ footer a {
   border: 1px solid #0C2720;
   width: 90%;
   max-width: 400px;
-  height: auto; /* Muokataan automaattiseksi, jos sisältö kasvaa */
+  height: auto; 
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Varjo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   display: flex;
   flex-direction: column; 
   align-items: center; 
@@ -328,13 +539,14 @@ footer a {
   right: 10px; 
   cursor: pointer;
   background: none;
-  border: none;
+  border: none; 
 }
 
 .close-button:hover {
   color: black;
 }
 
+/* Modaalin sisältö */
 #fear-feedback-image {
   max-width: 150px;
   margin: 15px 0;
