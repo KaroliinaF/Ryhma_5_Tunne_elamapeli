@@ -2,31 +2,74 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <title>Ilo - Tunne-elämäpeli</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hämmennys - Tunne-elämäpeli</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
     <h1>Tunteisiin</h1>
   </header>
-  
+
   <nav>
     <ul>
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="token.html">Merkit</a></li>
-      <li><a href="info.html">Info</a></li>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
 
- 
+  <main class="speed-game-container">
+    <p id="confused-instruction">Paina palloa, jossa on pupu mahdollisimman nopeasti ja opi hämmennyksen tunteesta!</p>
+
+
+    <!-- Pallot -->
+    <div class="speed-balls-container">
+      <div class="ball" id="ball-1">
+        <img src="../images/confused_bunny_head.png" alt="Confused Bunny">
+      </div>
+      <div class="ball" id="ball-2">
+        <img src="../images/confused_bunny_head.png" alt="Confused Bunny">
+      </div>
+      <div class="ball" id="ball-3">
+        <img src="../images/confused_bunny_head.png" alt="Confused Bunny">
+      </div>
+      <div class="ball" id="ball-4">
+        <img src="../images/confused_bunny_head.png" alt="Confused Bunny">
+      </div>
+      <div class="ball" id="ball-5">
+        <img src="../images/confused_bunny_head.png" alt="Confused Bunny">
+      </div>
+    </div>
+
+    <!-- Käynnistä-painike -->
+    <div class="start-button-container">
+      <button id="start-game" class="start-button">Käynnistä peli</button>
+    </div>
+
+<!-- Modal-ikkuna -->
+<div id="confused-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="confused-modal-message">Hienoa! Ansaitsit yhden pisteen Merkit-sivulle!</p>
+    <button id="confused-continue-button" class="start-button">Jatka</button>
+  </div>
+</div>
+
+
+    <!-- Pisteet ja palaute -->
+    <p id="score">Pisteet: 0 (aina kun saat 5p saat yhden pisteen Merkit-sivulle)</p>
+    <p id="feedback"></p>
+  </main>
 
   <footer>
-    <ul class="nav">
-      <li class="nav-item"><a href="index.html">Etusivu</a></li>
-      <li class="nav-item"><a href="token.html">Merkit</a></li>
-      <li class="nav-item"><a href="info.html">Info</a></li>
+    <ul>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
-    <p id="footerText">© 2024 Tunne-elämäpeli</p>
+    <p>© 2024 Tunne-elämäpeli</p>
   </footer>
+
+  <script src="../script/confused.js"></script>
 </body>
 </html>
