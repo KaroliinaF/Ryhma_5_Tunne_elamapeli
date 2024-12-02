@@ -45,15 +45,14 @@ function startGame() {
     currentQuestionIndex = 0; 
     summaryShown = false;
 
-    document.getElementById("startGame").style.display = "none"; 
+    document.getElementById("HappyDogStartGame").style.display = "none"; 
     document.getElementById("questionContainer").style.display = "block"; 
-    document.getElementById("cards").style.display = "flex"; 
+    document.getElementById("happyDogCards").style.display = "flex"; 
 
     document.getElementById("happyDog").style.display = "none";
 
     loadQuestion();
 }
-
 
 function loadQuestion() {
     const questionData = cardGameData[currentQuestionIndex];
@@ -121,7 +120,7 @@ function showSummary() {
     summaryShown = true;
 
     document.getElementById("questionContainer").style.display = "none";
-    document.getElementById("cards").style.display = "none";
+    document.getElementById("happyDogCards").style.display = "none";
 
     const feedbackElement = document.getElementById("happyFeedback");
     feedbackElement.innerHTML = "";
@@ -139,71 +138,58 @@ function showSummary() {
         pointsJoy < 10 ? "filter: grayscale(100%);" : "filter: none;"
       }">
       <p>Pisteet: ${pointsJoy}/10</p>
-      <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
     `;
-    document.querySelector("article").appendChild(summary);
 
-    document.getElementById("playAgain").addEventListener("click", () => {
+    const playAgainButton = document.createElement("button");
+    playAgainButton.id = "happyDogPlayAgain";
+    playAgainButton.textContent = "Pelaa uudelleen";
+    playAgainButton.addEventListener("click", () => {
         localStorage.setItem("points-joy", 0);
         currentQuestionIndex = 0;
         summaryShown = false;
         document.getElementById("questionContainer").style.display = "block";
-        document.getElementById("cards").style.display = "flex";
+        document.getElementById("happyDogCards").style.display = "flex";
 
         summary.remove();
 
         loadQuestion();
     });
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-    resetGameView();
-});
+    summary.appendChild(playAgainButton);
+    document.querySelector("article").appendChild(summary);
+}
 
 function resetGameView() {
     const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
 
     if (pointsJoy === 10) {
-        document.getElementById("startGame").style.display = "none";
+        document.getElementById("HappyDogStartGame").style.display = "none";
         document.getElementById("happyDog").style.display = "none";
         const feedbackElement = document.getElementById("happyFeedback");
         feedbackElement.innerHTML = `
             <p style="color: green; font-size: 1.2rem;">Olet jo saavuttanut täydet pisteet!</p>
             <img src="../images/happy_dog.png" alt="Iloinen koira" style="width: 150px; margin-top: 10px;">
-            <button id="playAgain" style="margin-top: 20px; padding: 10px; font-size: 1rem;">Pelaa uudelleen</button>
+            <button id="happyDogPlayAgain" style="margin-top: 20px; padding: 20px; font-size: 1rem;">Pelaa uudelleen</button>
         `;
 
-        document.getElementById("playAgain").addEventListener("click", () => {
+        const playAgainButton = document.getElementById("happyDogPlayAgain");
+        playAgainButton.addEventListener("click", () => {
             localStorage.setItem("points-joy", 0);
             currentQuestionIndex = 0;
             document.getElementById("happyFeedback").innerHTML = "";
             document.getElementById("questionContainer").style.display = "none";
-            document.getElementById("cards").style.display = "none";
-            document.getElementById("startGame").style.display = "block";
+            document.getElementById("happyDogCards").style.display = "none";
+            document.getElementById("HappyDogStartGame").style.display = "block";
             document.getElementById("happyDog").style.display = "block";
         });
     } else {
-        document.getElementById("startGame").style.display = "block";
+        document.getElementById("HappyDogStartGame").style.display = "block";
         document.getElementById("happyDog").style.display = "block";
         document.getElementById("questionContainer").style.display = "none";
-        document.getElementById("cards").style.display = "none";
+        document.getElementById("happyDogCards").style.display = "none";
         document.getElementById("happyFeedback").innerHTML = "";
     }
 }
 
-
-function startGame() {
-    localStorage.setItem("points-joy", 0); 
-    currentQuestionIndex = 0; 
-    summaryShown = false;
-
-    document.getElementById("startGame").style.display = "none"; 
-    document.getElementById("questionContainer").style.display = "block"; 
-    document.getElementById("cards").style.display = "flex"; 
-
-    document.getElementById("happyDog").style.display = "none";
-
-    loadQuestion();
-}
-
-document.getElementById("startGame").addEventListener("click", startGame);
+// Lisätään tapahtumakuuntelija pelin käynnistämispainikkeelle
+document.getElementById("HappyDogStartGame").addEventListener("click", startGame);

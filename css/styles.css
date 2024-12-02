@@ -205,19 +205,19 @@ footer hr {
 
 /* Happy-page */
 
-#cardsGame {
+#happyDogCardsGame {
   padding: 20px;
   background-color: #EFF8F1;
 }
 
-#cards {
+#happyDogCards {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 20px;
 }
 
-.card {
+.happyDogCard {
   width: 200px;
   height: auto;
   border: 2px solid #0c2720;
@@ -226,13 +226,13 @@ footer hr {
   text-align: center;
 }
 
-.card img {
+.happyDogCard img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-#playAgain {
+#happyDogPlayAgain {
   background-color: #255B4E; 
   color: #EFF8F1;
   border: none;
@@ -244,12 +244,12 @@ footer hr {
   transition: background-color 0.3s;
 }
 
-#playAgain:hover {
+#happyDogPlayAgain:hover {
   background-color: #0c2720; 
   color: #EFF8F1;
 }
 
-#startGame {
+#HappyDogStartGame {
   background-color: #255B4E; 
   color: #EFF8F1;
   border: none;
@@ -261,7 +261,7 @@ footer hr {
   transition: background-color 0.3s;
 }
 
-#startGame:hover {
+#happyDogStartGame:hover {
   background-color: #0c2720; 
   color: #EFF8F1;
 }
