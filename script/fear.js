@@ -22,7 +22,7 @@ const questions = [
   {
     title: "Ovikello soi",
     story: "Olen yksin kotona, ja ovikello soi. En odota ketään vieraita.",
-    image: "../images/", 
+    image: "../images/frightened_squirrel_paw_on_face.png", 
     question: "Pitäisikö minun avata ovi?",
     correctFeedback: "Mietitään uudestaan. Ovi kannattaa pitää kiinni, kun olet yksin.",
     wrongFeedback: "Mahtavaa! Älä avaa ovea, jos et tiedä, kuka siellä on. Odota aikuisen paluuta ja soita vaikka vanhemmillesi."
@@ -102,7 +102,6 @@ const questions = [
   
 ];
 
-// Käsittele käyttäjän valinta
 function handleChoice(isCorrect) {
   const feedbackText = document.getElementById("fear-feedback-text");
   const feedbackImage = document.getElementById("fear-feedback-image");
@@ -121,16 +120,16 @@ function handleChoice(isCorrect) {
   }
 
   nextButton.style.display = "inline-block"; // Näytetään "Seuraava kysymys" -painike
-  modal.style.display = "flex"; // Näytetään modal
+  modal.style.display = "flex"; 
 }
 
-// Sulje modal
+
 function closeModal() {
   const modal = document.getElementById("fear-modal");
-  modal.style.display = "none"; // Piilotetaan modal
+  modal.style.display = "none"; 
 }
 
-// Lataa seuraava kysymys
+
 function loadNextQuestion() {
   const storyElement = document.getElementById("fear-story");
   const titleElement = document.getElementById("fear-title");
@@ -143,7 +142,7 @@ function loadNextQuestion() {
     // Päivitä otsikko, tarina, kuva ja kysymys
     titleElement.textContent = currentQuestion.title;
     storyElement.textContent = currentQuestion.story;
-    questionElement.textContent = currentQuestion.question; // Päivitä "Valinta"-teksti
+    questionElement.textContent = currentQuestion.question; 
 
     if (currentQuestion.image) {
       imageElement.src = currentQuestion.image;
@@ -156,7 +155,7 @@ function loadNextQuestion() {
     currentQuestionIndex++;
   } else {
     alert("Olet suorittanut kaikki kysymykset!");
-    window.location.href = "../token.html"; // Vie käyttäjä Merkit-sivulle
+    window.location.href = "../token.html"; 
   }
 }
 
