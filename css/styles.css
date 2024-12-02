@@ -181,10 +181,11 @@ footer a {
 
 /* Token Page Styles */
 
+
 .token-grid-container {
   text-align: center;
   max-width: 600px; 
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 /* Otsikon hienosäätö */
@@ -211,14 +212,13 @@ footer a {
 }
 
 .token img {
-  width: 180px; 
-  height: 180px;
-  border-radius: 50%; 
-  transition: transform 0.2s; /* Hover-efekti */
+  width: 250px; 
+  height: 250px;
+  transition: transform 0.5s; 
 }
 
 .token img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.5); 
 }
 
 .token p {
@@ -228,10 +228,10 @@ footer a {
 }
 
 .badge-img {
-  filter: grayscale(80%); /* Kuva himmeänä aluksi */
+  filter: grayscale(80%); 
   transition: filter 0.3s ease;
 }
 
 .badge-img.active {
-  filter: grayscale(0%); /* Täysi väri, kun pisteet saavutettu */
+  filter: grayscale(0%); 
 }
