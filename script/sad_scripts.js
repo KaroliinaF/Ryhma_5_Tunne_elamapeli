@@ -2,7 +2,7 @@
 let sadGameScore = 0;
 const sadGameFeedbackBox = document.getElementById('sad-feedback-box');
 const sadGameTips = [
-  "Hyväksy tunteesi: On okei tuntea surua ja antaa itsellesi lupa tuntea.",
+  "Hyväksy tunteesi: On okei tuntea surua ja antaa itsellesi lupa tunteiden näkymiseen.",
   "Keskustele tunteistasi: Ystävän tai terapeutin kanssa puhuminen voi auttaa.",
   "Huolehdi itsestäsi: Lepo, liikunta ja terveellinen ruokavalio tukevat toipumista.",
   "Anna aikaa: Suru voi viedä aikaa, eikä toipumiseen ole kiirettä."

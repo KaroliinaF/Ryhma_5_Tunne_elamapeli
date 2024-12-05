@@ -201,6 +201,7 @@ footer hr {
   }
 }
 
+
 /* Page-Specific Styles */
 
 #sad-game-article {
@@ -236,9 +237,10 @@ footer hr {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-items: center;
-  background-color: #CAECD2;
+  background-color: #EBFAF0;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   width: 1200px;
   max-width: 100%;
   height: 500px;
@@ -259,44 +261,62 @@ footer hr {
   transform: scale(1.2);
 }
 
-/* instruction box */
+/* sad instruction box */
 #sad-instruction-box {
-  background-color: var(--light-mint);
-  border: 2px solid var(--dark-green);
-  border-radius: 10px;
-  padding: 15px 25px;
+  background-color: #EBFAF0;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 20px;
   text-align: center;
-  font-size: 1.7rem;
-  color: var(--dark-green);
-  width: 100%;
-  margin: 10px 0;
-}
-
-/* feedback box */
-#sad-feedback-box {
-  background-color: var(--light-mint);
-  border: 2px solid var(--dark-green);
-  border-radius: 10px;
-  padding: 10px 15px;
-  text-align: center;
-  color: var(--dark-green);
-  width: 100%;
-  margin-top: 10px;
-  font-size: 1.4rem;
+  color: #1A533D;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   word-wrap: break-word;
   word-break: break-word;
-  min-height: 120px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+#sad-instruction-box h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+#sad-instruction-box p {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+#sad-feedback-box {
+  background-color: var(--light-mint);
+  border: none;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-green);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-top: 15px;
   margin-bottom: 50px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#sad-feedback-box:hover {
+  transform: scale(1.05);
+  background-color: #d8f3dc;
 }
 
 
 #sad-feedback-box h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 #sad-feedback-box p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #333;
 }
 
