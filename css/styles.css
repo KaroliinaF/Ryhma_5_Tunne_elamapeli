@@ -311,14 +311,13 @@ footer hr {
 }
 
 .token img {
-  width: 180px; 
-  height: 180px;
-  border-radius: 50%; 
-  transition: transform 0.2s; /* Hover-efekti */
+  width: 250px; 
+  height: 250px;
+  transition: transform 0.5s; 
 }
 
 .token img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.5);
 }
 
 .token p {
