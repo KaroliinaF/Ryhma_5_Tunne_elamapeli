@@ -31,9 +31,14 @@ header {
   width: 100%;
 }
 
+p {
+  margin-top: 20px;
+}
+
 /* Navigation */
 nav {
   float: left;
+  height: 100vh;
   width: 20%;
   background: #caecd2;
 }
@@ -52,7 +57,7 @@ nav a {
   color: #EFF8F1;
   background-color: #255B4E;
   padding: 10px; 
-  margin: 10px; 
+  margin: 25px; 
   display: inline-block; 
   border-radius: 50%; 
   text-align: center; 
@@ -72,6 +77,7 @@ article {
   float: left;
   padding: 20px;
   width: 80%;
+  min-height: 100vh;
   background-color: #EFF8F1;
 }
 
@@ -120,23 +126,41 @@ section {
 /* Footer */
 footer {
   background-color: #0c2720;
-  text-align: center;
   color: #EFF8F1;
   width: 100%;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#footerText {
-  color: #EFF8F1;
+footer .nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 footer .nav-item {
-  padding: 10px;
+  margin: 0 15px;
 }
 
 footer a {
   text-decoration: none;
   color: #EFF8F1;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #EFF8F1;
+  margin: 20px 0;
+  width: 80%;
+}
+
+#footerText {
+  color: #EFF8F1;
+  margin-top: 10px;
 }
 
 /* Responsive Design */
@@ -179,13 +203,88 @@ footer a {
 
 /* Page-Specific Styles */
 
-/* Token Page Styles */
+/* Happy-page */
 
+#happyDogCardsGame {
+  padding: 20px;
+  background-color: #EFF8F1;
+}
+
+#happyDogCards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.happyDogCard {
+  width: 200px;
+  height: auto;
+  border: 2px solid #0c2720;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.happyDogCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#happyDogPlayAgain {
+  background-color: #255B4E; 
+  color: #EFF8F1;
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#happyDogPlayAgain:hover {
+  background-color: #0c2720; 
+  color: #EFF8F1;
+}
+
+#HappyDogStartGame {
+  background-color: #255B4E; 
+  color: #EFF8F1;
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#happyDogStartGame:hover {
+  background-color: #0c2720; 
+  color: #EFF8F1;
+}
+#happyDog {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#happyDog img {
+  max-width: 300px;
+  height: auto;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+
+/* Token Page Styles */
 
 .token-grid-container {
   text-align: center;
   max-width: 600px; 
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 /* Otsikon hienosäätö */
@@ -218,7 +317,7 @@ footer a {
 }
 
 .token img:hover {
-  transform: scale(1.5); 
+  transform: scale(1.5);
 }
 
 .token p {
@@ -228,10 +327,10 @@ footer a {
 }
 
 .badge-img {
-  filter: grayscale(80%); 
+  filter: grayscale(80%); /* Kuva himmeänä aluksi */
   transition: filter 0.3s ease;
 }
 
 .badge-img.active {
-  filter: grayscale(0%); 
+  filter: grayscale(0%); /* Täysi väri, kun pisteet saavutettu */
 }
