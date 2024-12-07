@@ -7,3 +7,6 @@ function navigate(page) {
     window.location.href = 'info.html';
   }
 }
+
+const AngerPoints = localStorage.getItem('AngerPoints');
+document.getElementById("points-anger").textContent = `${AngerPoints}/10`;
