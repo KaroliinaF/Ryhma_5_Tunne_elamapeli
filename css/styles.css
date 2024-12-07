@@ -78,6 +78,7 @@ article {
   padding: 20px;
   width: 80%;
   min-height: 100vh;
+  height: 100vh;
   background-color: #EFF8F1;
 }
 
@@ -201,6 +202,7 @@ hr {
   }
 }
 
+
 /* Page-Specific Styles */
 
 /* Happy-page */
@@ -276,6 +278,124 @@ hr {
   height: auto;
   display: inline-block;
   border-radius: 10px;
+}
+
+/* sad page */
+
+#sad-game-article {
+  background-color: #EFF8F1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* game title */
+#game-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--dark-green);
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* sad container */
+#sad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px auto;
+  max-width: 900px;
+}
+
+/* sad symbol container */
+#sad-symbol-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  background-color: #EBFAF0;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 1200px;
+  max-width: 100%;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+/* Symbols */
+.symbol {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.symbol:hover {
+  transform: scale(1.2);
+}
+
+/* sad instruction box */
+#sad-instruction-box {
+  background-color: #EBFAF0;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 20px;
+  text-align: center;
+  color: #1A533D;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  word-wrap: break-word;
+  word-break: break-word;
+  width: 100%;
+  margin: 15px 0;
+}
+
+#sad-instruction-box h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+#sad-instruction-box p {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+#sad-feedback-box {
+  background-color: var(--light-mint);
+  border: none;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-green);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#sad-feedback-box:hover {
+  transform: scale(1.05);
+  background-color: #d8f3dc;
+}
+
+
+#sad-feedback-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#sad-feedback-box p {
+  font-size: 1.6rem;
+  color: #333;
 }
 
 

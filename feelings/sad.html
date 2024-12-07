@@ -2,8 +2,8 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <title>Ilo - Tunne-elämäpeli</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Suru - Tunne-elämäpeli</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
@@ -12,12 +12,42 @@
   
   <nav>
     <ul>
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="token.html">Merkit</a></li>
-      <li><a href="info.html">Info</a></li>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
 
+  <article id="sad-game-article">
+    <h2 id="game-title">Surusymbolit</h2>
+    <section id="sad-game-section">
+      
+<div id="sad-container">
+  
+  <div id="sad-symbol-container" class="symbol-container">
+    <img src="../images/sadsymbol1.png" alt="1" class="symbol" data-correct="true">
+    <img src="../images/sadsymbol2.png" alt="2" class="symbol" data-correct="true">
+    <img src="../images/sadsymbol3.png" alt="3" class="symbol" data-correct="false">
+    <img src="../images/sadsymbol4.png" alt="4" class="symbol" data-correct="true">
+    <img src="../images/sadsymbol5.png" alt="5" class="symbol" data-correct="false">
+    <img src="../images/sadsymbol6.png" alt="6" class="symbol" data-correct="false">
+    <img src="../images/sadsymbol7.png" alt="7" class="symbol" data-correct="false">
+    <img src="../images/sadsymbol8.png" alt="8" class="symbol" data-correct="false">
+    <img src="../images/sadsymbol9.png" alt="9" class="symbol" data-correct="true">
+  </div>
+
+ 
+<div id="sad-instruction-box" class="instruction-box">
+  <h1>Valitse suruun liittyvät symbolit</h1>
+  <p>Pisteet: <span id="sad-game-score">0</span>/10</p>
+</div>
+
+<div id="sad-feedback-box" class="feedback-box hidden">
+  <h2></h2>
+  <p></p>
+</div>
+    </section>
+  </article>
 
   <footer>
     <ul class="nav">
@@ -28,5 +58,9 @@
     </ul>
     <p id="footerText">© 2024 Tunne-elämäpeli</p>
   </footer>
+
+  <script src="../script/sad_scripts.js"></script>
+  <script src="../script/token.js"></script>
 </body>
 </html>
+
