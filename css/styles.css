@@ -171,51 +171,7 @@ footer a {
 
 /* Page-Specific Styles */
 
-/* Fear Page Styles */
-
-#story-section {
-  border: 2px solid #ffa500;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-/* Choice Section */
-#choice-section {
-  border: 2px solid #0000ff;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.choice-button {
-  padding: 10px 20px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 10px;
-  transition: background-color 0.3s;
-}
-
-.choice-button.correct {
-  background-color: #00a000;
-  color: white;
-}
-
-.choice-button.wrong {
-  background-color: #d10000;
-  color: white;
-}
-
-/* Feedback Section */
-#feedback-section {
-  border: 2px solid #ffa500;
-  padding: 15px;
-  margin-top: 20px;
-  display: none; 
-}
-
 /* Token Page Styles */
-
-
 .token-grid-container {
   text-align: center;
   max-width: 600px; 
@@ -270,10 +226,129 @@ footer a {
   filter: grayscale(0%); 
 }
 
+.token h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #0c2720;
+}
+
+/* Reset-nappi */
+.reset-button-container {
+  text-align: center;
+  margin-top: 40px; 
+}
+
+.token-reset-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #CAECD2;
+  color: #0C2720;
+  border: 2px solid #255B4E;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.token-reset-button:hover {
+  background-color: #EFF8F1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.token-reset-button:active {
+  background-color: #255B4E;
+  color: #EFF8F1;
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Modalin tyylit */
+.token-modal {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.token-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.token-modal .modal-content {
+  background-color: #EFF8F1; /* Modalin taustaväri */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.token-modal .modal-content p {
+  font-size: 1.2rem;
+  color: #0C2720;
+  margin-bottom: 20px;
+}
+
+.token-modal .modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.token-modal .modal-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.token-modal .modal-button.confirm {
+  background-color: #255B4E;
+  color: #EFF8F1;
+}
+
+.token-modal .modal-button.confirm:hover {
+  background-color: #0c2720;
+}
+
+.token-modal .modal-button.cancel {
+  background-color: #9E403F;
+  color: #EFF8F1;
+}
+
+.token-modal .modal-button.cancel:hover {
+  background-color: #7C322F;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+  .token-reset-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .token-modal .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
 /* Confused Page Styles */
 
 #confused-instruction {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   color: #0c2720; 
   margin-bottom: 40px; 
   text-align: center; 
@@ -287,7 +362,7 @@ footer a {
   padding: 20px;
   display: flex;
   flex-direction: column; 
-  align-items: center;  
+  align-items: center;    
 }
 
 /* Pallot */
@@ -314,7 +389,7 @@ footer a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none; 
+  display: none; /* Kuva on oletuksena piilossa */
 }
 
 .ball.active {
@@ -470,32 +545,37 @@ footer a {
 
 /* Valinnanapit */
 .fear-choice-button {
-  padding: 10px; 
-  border: none;
-  font-size: 0.9rem; 
-  cursor: pointer;
-  margin: 20px; 
+  width: 150px; 
+  height: 150px; 
   border-radius: 50%; 
-  transition: background-color 0.3s, transform 0.2s;
-  width: 190px; 
-  height: 190px; 
-  text-align: center;
-  line-height: 50px; 
-}
-
-.fear-choice-button.correct {
-  background-color: #409E85;
-  color: #0C2720;
-}
-
-.fear-choice-button.wrong {
-  background-color: #A81414;
-  color: white;
+  padding: 10px; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  margin: 20px; 
+  border: none; 
+  background-color: #53816E; 
+  color: white; 
+  transition: background-color 0.3s, transform 0.2s; 
+  text-align: center; 
+  line-height: 150px; 
 }
 
 .fear-choice-button:hover {
   transform: scale(1.1); 
-  opacity: 0.9;
+  background-color: #409E85; 
+}
+
+.fear-choice-button:active {
+  transform: scale(0.95); 
+  background-color: #255B4E; 
+}
+
+.fear-choice-button.correct {
+  background-color: #409E85; 
+}
+
+.fear-choice-button.wrong {
+  background-color: #9E403F; 
 }
 
 /* Modal */
@@ -509,13 +589,13 @@ footer a {
   height: 100%;
   display: flex;
   align-items: center; 
-  justify-content: center; 
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .modal-content {
   background-color: #EFF8F1; 
-  padding: 40px; 
+  padding: 40px;
   border: 1px solid #0C2720;
   width: 90%;
   max-width: 400px;
@@ -538,7 +618,7 @@ footer a {
   top: 10px; 
   right: 10px; 
   cursor: pointer;
-  background: none;
+  background: none; 
   border: none; 
 }
 
