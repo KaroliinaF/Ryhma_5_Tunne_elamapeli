@@ -237,7 +237,7 @@ footer a {
 }
 
 /* disgust */
-.header-box {
+.disgustheader-box {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
@@ -248,7 +248,7 @@ footer a {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.content {
+.disgustquizContainer {
   display: flex;
   flex-wrap: nowrap;
   max-width: 800px;
@@ -262,26 +262,26 @@ footer a {
   flex-direction: column;
     display: none;
 }
-.content.active {
+.disgustcontent.active {
     display: flex; 
 }
-.image-box {
+.disgustimage-box {
   flex: 1 1 30%;
   text-align: center;
   margin-right: 20px;
 }
-.image-box img {
+.disgustimage-box img {
   max-width: 60%;
   height: auto;
   border-radius: 8px;
 }
-.answers {
+.disgustanswers {
   flex: 1 1 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.answer {
+.disgustanswer {
   margin: 10px 0;
   padding: 10px;
   background: #f9f9f9;
@@ -291,13 +291,28 @@ footer a {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
-.answer:hover {
+.disgustanswer:hover {
   background: #eaeaea;
   transform: scale(1.05);
 }
-.result {
+.disgustresult {
   margin-top: 20px;
   font-size: 1.2em;
   color: #0c2720;
   font-weight: bold;
+}
+#disgustviewMarksButton , #disgustplayAgainButton {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0c2720;
+  color: #EFF8F1;
+  transition: background-color 0.3s;
+  }
+
+  #disgustviewMarksButton:hover , #disgustplayAgainButton:hover {
+  background-color: #085643;
 }
