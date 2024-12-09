@@ -3,30 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Ilo - Tunne-elämäpeli</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
     <h1>Tunteisiin</h1>
   </header>
-  
+
   <nav>
     <ul>
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="token.html">Merkit</a></li>
-      <li><a href="info.html">Info</a></li>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
 
+  <article id="happyDogCardsGame">
+    <h2>Tunnistetaan kuvista ilo!</h2>
+    <p>Valitse kahdesta kuvasta: jokaisesta kuvaparista on oma kysymyksensä,
+      jonka perusteella valitaan väittämää vastaava kuva. Nyt pelaamaan!</p><br>
+    
+    <div id="happyDog">
+        <img src="../images/happy_animals11.png" alt="happy dog">
+    </div>
 
+    <button id="HappyDogStartGame" style="padding: 10px; font-size: 1rem;">Aloita peli</button>
+
+    <div id="questionContainer" style="display: none;">
+      <p id="question"></p>
+    </div> 
+    <div id="happyDogCards" style="display: none;">
+      <div class="happyDogCard" id="card1"></div>
+      <div class="happyDogCard" id="card2"></div>
+    </div>
+    <div id="happyFeedback" style="font-size: 1.5rem; text-align: center; margin-top: 20px;"></div>
+  </article>
 
   <footer>
     <ul class="nav">
-      <li class="nav-item"><a href="index.html">Etusivu</a></li>
-      <li class="nav-item"><a href="token.html">Merkit</a></li>
-      <li class="nav-item"><a href="info.html">Info</a></li>
+      <li class="nav-item"><a href="../index.html">Etusivu</a></li>
+      <li class="nav-item"><a href="../token.html">Merkit</a></li>
+      <li class="nav-item"><a href="../info.html">Info</a></li>
     </ul>
+    <hr>
     <p id="footerText">© 2024 Tunne-elämäpeli</p>
   </footer>
+
+  <script src="../script/happy.js"></script>
 </body>
 </html>

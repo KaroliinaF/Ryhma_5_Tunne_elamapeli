@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ilo - Tunne-elämäpeli</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
@@ -12,20 +12,54 @@
   
   <nav>
     <ul>
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="token.html">Merkit</a></li>
-      <li><a href="info.html">Info</a></li>
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="../token.html">Merkit</a></li>
+      <li><a href="../info.html">Info</a></li>
     </ul>
   </nav>
 
+  <div id="anger-startScreen">
+    <div id="anger-startDiv">
+      <div>
+        <h2>Tervetuloa Vihapulmaan!</h2>
+        <p id="anger-GameInfo">
+          Tässä pelissä opit selättämään viharaivarit ja muuttamaan mökömielen hymynaamaksi! 
+          Kohtaat erilaisia tilanteita, joissa tunnekuohut voivat nousta pintaan. 
+          Tehtäväsi on valita viisaasti ja kerätä pisteitä rauhoittamalla mielesi. 
+          Valitse oikein, niin pääset tasolta toiselle ja sinusta tulee tunteiden taituri! <br>
+          Paina aloita peli -nappulaa aloittaaksesi.
+        </p>
+      </div>
+      <img src='../images/angry_cat.png' id="anger-StartedCat"/>
+    </div>
+    <button id="anger-startButton" class="AngerButton">Aloita peli</button>
+  </div>
+
+  <div id="anger-gameContainer">
+    <div id="anger-title" style="display:none;"></div>
+    <div id="anger-situation" style='display: flex; flex-direction: column; text-align: center; align-items: center; margin-top: 20px;'></div>
+    <div id="anger-answers"></div>
+    <div id="anger-feedbackContainer">
+      <div id="anger-feedback" class="feedback-text"></div>
+      <div id="anger-feedbackImage" class="anger-feedback-image"></div>
+    </div>
+    <div id="anger-nextProgressContainer">
+      <button id="anger-nextButton" class="AngerButton" style="display: none; margin-right: 20px;">Seuraava</button>
+      <div id="anger-progress" style="margin-top: 10px;"></div>
+    </div>
+   </div>
+  <div id="anger-finalFeedback"></div>
 
   <footer>
     <ul class="nav">
-      <li class="nav-item"><a href="index.html">Etusivu</a></li>
-      <li class="nav-item"><a href="token.html">Merkit</a></li>
-      <li class="nav-item"><a href="info.html">Info</a></li>
+      <li class="nav-item"><a href="../index.html">Etusivu</a></li>
+      <li class="nav-item"><a href="../token.html">Merkit</a></li>
+      <li class="nav-item"><a href="../info.html">Info</a></li>
     </ul>
     <p id="footerText">© 2024 Tunne-elämäpeli</p>
   </footer>
+
+<script type="module" src="../script/angercode.js"></script>
+
 </body>
 </html>
