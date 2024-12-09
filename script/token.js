@@ -34,5 +34,5 @@ function updatePointsOnTokenPage() {
   if (pointsAnger >= 10) document.getElementById("image-anger").classList.add("active");
 }
 
-// Kutsutaan funktiota, kun sivu ladataan
-window.onload = updatePointsOnTokenPage;
+const AngerPoints = localStorage.getItem('AngerPoints');
+document.getElementById("points-anger").textContent = `${AngerPoints}/10`;
