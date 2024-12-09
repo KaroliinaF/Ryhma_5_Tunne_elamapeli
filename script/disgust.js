@@ -42,7 +42,7 @@ function showQuestion(index) {
 
     content.innerHTML = ` 
         <div class="disgustimage-box">
-            <img src="/images/disgusted_turtle.png" alt="Tehtäväkuva">
+            <img src="../images/disgusted_turtle.png" alt="Tehtäväkuva">
         </div>
         <div class="disgustanswers">
             <h3>${questionData.question}</h3>
