@@ -78,18 +78,18 @@ function showResults() { //kysytty tekoälyltä apua siihen, että lopussa näky
     const resultContainer = document.getElementById("disgustresultContainer");
     resultContainer.style.display = "block";
 
-    if (score=10){
+    if (score == 10) {
         document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit kaikki vastaukset! JEE`
-    }
-    else {
-        if (score>=6) {
-            document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit vastauksia tosi hyvin! Katso onnistutko saamaan täydet pisteet :)`
-        }
-        else { 
-            document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Höh, harjoittele vielä taitojasi uudestaan!`
-        }}
+     }
+        else {
+            if (score>=6) {
+                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit vastauksia tosi hyvin! Katso onnistutko saamaan täydet pisteet :)`
+            }
+            else { 
+                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Höh, harjoittele vielä taitojasi uudestaan!`
+            }}
     document.getElementById("disgustviewMarksButton").addEventListener("click", () => {
-        window.location.href = "/token.html";
+        window.location.href = "./token.html";
     })
     document.getElementById("disgustplayAgainButton").addEventListener("click", () => {
         score=0
