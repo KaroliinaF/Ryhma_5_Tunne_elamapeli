@@ -1,51 +1,89 @@
-function navigate(page) {
-  if (page === 'index') {
-    window.location.href = 'index.html';
-  } else if (page === 'token') {
-    window.location.href = 'token.html';
-  } else if (page === 'info') {
-    window.location.href = 'info.html';
-  }
-}
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Merkit - Tunne-elämäpeli</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tunteisiin</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Etusivu</a></li>
+      <li><a href="token.html">Merkit</a></li>
+      <li><a href="info.html">Info</a></li>
+    </ul>
+  </nav>
 
-// Päivitä pisteet token-sivulla
-function updatePointsOnTokenPage() {
-  // Hae pisteet localStorage:sta
-  const pointsJoy = parseInt(localStorage.getItem("points-joy")) || 0;
-  const pointsSadness = parseInt(localStorage.getItem("points-sadness")) || 0;
-  const pointsFear = parseInt(localStorage.getItem("points-fear")) || 0;
-  const pointsSurprise = parseInt(localStorage.getItem("points-surprise")) || 0;
-  const pointsDisgust = parseInt(localStorage.getItem("points-disgust")) || 0;
-  const pointsAnger = parseInt(localStorage.getItem("points-anger")) || 0;
+  <article>
 
-  // Päivitä näkymä DOM-elementteihin
-  document.getElementById("points-joy").textContent = `${pointsJoy}/10`;
-  document.getElementById("points-sadness").textContent = `${pointsSadness}/10`;
-  document.getElementById("points-fear").textContent = `${pointsFear}/10`;
-  document.getElementById("points-surprise").textContent = `${pointsSurprise}/10`;
-  document.getElementById("points-disgust").textContent = `${pointsDisgust}/10`;
-  document.getElementById("points-anger").textContent = `${pointsAnger}/10`;
+    <div class="token-grid-container">
+      <h2>Tunne-elämäpeli: Merkit</h2>
+      <div class="token-grid">
+        <div class="token">
+          <h3>Ilo</h3>
+          <a href="feelings/happy.html">
+            <img src="images/happy_dog.png" alt="Ilo" class="badge-img" id="image-joy">
+            <p id="points-joy">0/10</p>
+          </a>
+        </div>
+        <div class="token">
+          <h3>Suru</h3>
+          <a href="feelings/sad.html">
+            <img src="images/sad_hedgehog.png" alt="Suru" class="badge-img" id="image-sadness">
+            <p id="points-sadness">0/10</p>
+          </a>
+        </div>
+        <div class="token">
+          <h3>Pelko</h3>
+          <a href="feelings/fear.html">
+            <img src="images/frightened_squirrel.png" alt="Pelko" class="badge-img" id="image-fear">
+            <p id="points-fear">0/10</p>
+          </a>
+        </div>
+        <div class="token">
+          <h3>Hämmennys</h3>
+          <a href="feelings/confused.html">
+            <img src="images/confused_bunny.png" alt="Hämmennys" class="badge-img" id="image-surprise">
+            <p id="points-surprise">0/10</p>
+          </a>
+        </div>
+        <div class="token">
+          <h3>Inho</h3>
+          <a href="feelings/disgusted.html">
+            <img src="images/disgusted_turtle.png" alt="Inho" class="badge-img" id="image-disgust">
+            <p id="points-disgust">0/10</p>
+          </a>
+        </div>
+        <div class="token">
+          <h3>Viha</h3>
+          <a href="feelings/angry.html">
+            <img src="images/angry_cat.png" alt="Viha" class="badge-img" id="image-anger">
+            <p id="points-anger">0/10</p>
+          </a>
+        </div>
+      </div>
+    </div>
 
-  // Lokita konsoliin pisteet debuggausta varten
-  console.log("Pisteet päivitetty:", { pointsJoy, pointsSadness, pointsFear, pointsSurprise, pointsDisgust, pointsAnger });
-}
+    <div class="reset-button-container">
+      <button id="reset-points-button" class="token-reset-button">Nollaa kaikki pisteet</button>
+    </div>
+  </article>
 
-// Nollaa kaikki pisteet
-document.getElementById("reset-points-button").addEventListener("click", function () {
-  // Aseta kaikki pisteet localStorage:en nollaksi
-  localStorage.setItem("points-joy", 0);
-  localStorage.setItem("points-sadness", 0);
-  localStorage.setItem("points-fear", 0);
-  localStorage.setItem("points-surprise", 0);
-  localStorage.setItem("points-disgust", 0);
-  localStorage.setItem("points-anger", 0);
+  <footer>
+    <ul class="nav">
+      <li class="nav-item"><a href="index.html">Etusivu</a></li>
+      <li class="nav-item"><a href="token.html">Merkit</a></li>
+      <li class="nav-item"><a href="info.html">Info</a></li>
+    </ul>
+    <hr>
+    <p id="footerText">© 2024 Tunne-elämäpeli</p>
+  </footer>
 
-  // Päivitä näkymä
-  updatePointsOnTokenPage();
+  <script src="script/token.js"></script>
 
-  // Ilmoita käyttäjälle
-  alert("Kaikki pisteet on nollattu!");
-});
-
-// Päivitä pisteet sivun latauksessa
-window.onload = updatePointsOnTokenPage;
+</body>
+</html>
