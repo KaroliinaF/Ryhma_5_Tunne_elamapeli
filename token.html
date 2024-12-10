@@ -5,11 +5,14 @@
   <title>Merkit - Tunne-elämäpeli</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+<main>
+
   <header>
     <h1>Tunteisiin</h1>
   </header>
-  
+
   <nav>
     <ul>
       <li><a href="index.html">Etusivu</a></li>
@@ -68,6 +71,11 @@
       </div>
     </div>
 
+    <div id="total-points-container">
+      <h3>Yhteispisteet</h3>
+      <p id="total-points">0/60</p>
+    </div>
+
     <div class="reset-button-container">
       <button id="reset-points-button" class="token-reset-button">Nollaa kaikki pisteet</button>
     </div>
@@ -84,6 +92,6 @@
   </footer>
 
   <script src="script/token.js"></script>
-
+</main>
 </body>
 </html>
