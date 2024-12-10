@@ -397,10 +397,27 @@ hr {
   }
 
 /* Token Page Styles */
+
 .token-grid-container {
+text-align: center;
+max-width: 600px; 
+margin: 0 auto; 
+}
+
+#total-points-container {
   text-align: center;
-  max-width: 600px; 
-  margin: 0 auto; 
+  margin-top: 20px;
+}
+
+#total-points-container h3 {
+  font-size: 1.5rem;
+  color: var(--dark-green);
+}
+
+#total-points {
+  font-size: 1.2rem;
+  color: var(--teal-green);
+  font-weight: bold;
 }
 
 /* Otsikon hienosäätö */
