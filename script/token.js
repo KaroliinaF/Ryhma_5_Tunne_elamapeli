@@ -49,3 +49,6 @@ document.getElementById("reset-points-button").addEventListener("click", functio
 
 // Päivitä pisteet sivun latauksessa
 window.onload = updatePointsOnTokenPage;
+
+const AngerPoints = localStorage.getItem('AngerPoints');
+document.getElementById("points-anger").textContent = `${AngerPoints}/10`;
