@@ -18,7 +18,10 @@ function updatePointsOnTokenPage() {
   const pointsDisgust = parseInt(localStorage.getItem("points-disgust")) || 0;
   const pointsAnger = parseInt(localStorage.getItem("points-anger")) || 0;
 
-  // Päivitä näkymä DOM-elementteihin
+  // Laske yhteispisteet
+  const totalPoints = pointsJoy + pointsSadness + pointsFear + pointsSurprise + pointsDisgust + pointsAnger;
+
+  // Päivitä yksittäiset pisteet DOM-elementteihin
   document.getElementById("points-joy").textContent = `${pointsJoy}/10`;
   document.getElementById("points-sadness").textContent = `${pointsSadness}/10`;
   document.getElementById("points-fear").textContent = `${pointsFear}/10`;
@@ -26,8 +29,29 @@ function updatePointsOnTokenPage() {
   document.getElementById("points-disgust").textContent = `${pointsDisgust}/10`;
   document.getElementById("points-anger").textContent = `${pointsAnger}/10`;
 
+  // Päivitä yhteispisteet DOM-elementtiin
+  document.getElementById("total-points").textContent = `${totalPoints}/60`;
+
+  // Päivitä kuvan tila pisteiden perusteella
+  updateBadgeStatus("image-joy", pointsJoy);
+  updateBadgeStatus("image-sadness", pointsSadness);
+  updateBadgeStatus("image-fear", pointsFear);
+  updateBadgeStatus("image-surprise", pointsSurprise);
+  updateBadgeStatus("image-disgust", pointsDisgust);
+  updateBadgeStatus("image-anger", pointsAnger);
+
   // Lokita konsoliin pisteet debuggausta varten
-  console.log("Pisteet päivitetty:", { pointsJoy, pointsSadness, pointsFear, pointsSurprise, pointsDisgust, pointsAnger });
+  console.log("Pisteet päivitetty:", { pointsJoy, pointsSadness, pointsFear, pointsSurprise, pointsDisgust, pointsAnger, totalPoints });
+}
+
+// Päivitä kuvan tila (värillinen/harmaa)
+function updateBadgeStatus(imageId, points) {
+  const imageElement = document.getElementById(imageId);
+  if (points === 10) {
+    imageElement.classList.add("active"); // Lisää värillinen tila
+  } else {
+    imageElement.classList.remove("active"); // Poista värillinen tila
+  }
 }
 
 // Nollaa kaikki pisteet
@@ -49,6 +73,3 @@ document.getElementById("reset-points-button").addEventListener("click", functio
 
 // Päivitä pisteet sivun latauksessa
 window.onload = updatePointsOnTokenPage;
-
-const AngerPoints = localStorage.getItem('AngerPoints');
-document.getElementById("points-anger").textContent = `${AngerPoints}/10`;
