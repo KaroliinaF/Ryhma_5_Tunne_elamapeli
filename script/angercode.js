@@ -194,7 +194,7 @@ function nextQuestion() {
     finalFeedbackElement.style.display = "block";
 
     // Store points in localStorage for the token page
-    localStorage.setItem('AngerPoints', totalPoints);
+    localStorage.setItem('points-anger', totalPoints);
   }
 }
 
