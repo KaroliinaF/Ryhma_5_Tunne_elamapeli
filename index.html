@@ -24,19 +24,46 @@
         Tunteiden ymmärtäminen on tärkeää, koska se auttaa meitä tuntemaan iloa, olemaan ystävällisiä ja toimimaan hyvin yhdessä muiden kanssa.
         Tunteet myös kertovat meille, mitkä asiat ovat meille tärkeitä. Jokaisella tunteella on oma pelinsä, jossa opit uusia asioita hauskalla tavalla.</p> 
 
-    <p>Tässä voit tutustua sivuilla oleviin pelihahmoihin: </p><br/>
+    <p>Tässä voit tutustua sivuilla oleviin pelihahmoihin: </p>
 
-    <div id="animals">
-      <!-- Tunteiden hahmojen kuvat -->
-      <div><img src="images/happy_dog.png" alt="Iloinen koira"><p>Ilo</p></div>
-      <div><img src="images/sad_hedgehog.png" alt="Surullinen siili"><p>Suru</p></div>
-      <div><img src="images/confused_bunny.png" alt="Hämmentynyt pupu"><p>Hämmennys</p></div>
-      <div><img src="images/angry_cat.png" alt="Vihainen kissa"><p>Viha</p></div>
-      <div><img src="images/disgusted_turtle.png" alt="Inhoa tunteva kilpikonna"><p>Inho</p></div>
-      <div><img src="images/frightened_squirrel.png" alt="Pelokas orava"><p>Pelko</p></div>
-   
+    <div class="index-grid">
+      <div class="index-token">
+        <h3>Ilo</h3>
+        <img src="images/happy_dog.png" alt="Ilo" class="index-badge-img" id="image-joy">
+        <p>tekstiä</p>
+      </div>
+      <div class="index-token">
+        <h3>Suru</h3>
+        <img src="images/sad_hedgehog.png" alt="Suru" class="index-badge-img" id="image-sadness">
+        <p>tekstiä</p>
+      </div>
+      <div class="index-token">
+        <h3>Pelko</h3>
+        <img src="images/frightened_squirrel.png" alt="Pelko" class="index-badge-img" id="image-fear">
+        <p>Pelko-sivulla pääset kohtaamaan ja ymmärtämään pelon tunteen turvallisessa ympäristössä. Haasteesi on ratkaista jännittävä arvoitus, joka vaatii rohkeutta ja keskittymistä. Jokainen oikea vastaus vie sinut askeleen lähemmäksi pelon merkin ansaitsemista. Uskallatko ottaa haasteen vastaan?</p>
+      </div>
+      <div class="index-token">
+        <h3>Hämmennys</h3>
+        <img src="images/confused_bunny.png" alt="Hämmennys" class="index-badge-img" id="image-surprise">
+        <p>Hämmennys-sivulla kohtaat vauhdikkaan haasteen, jossa nopeus ja tarkkaavaisuus ovat avainasemassa. Tehtävänäsi on reagoida nopeasti ja tehdä oikeita valintoja sekunnin murto-osissa. Jokainen onnistuminen vie sinut lähemmäksi hämmennyksen merkin ansaitsemista. Kuinka nopeasti pystyt toimimaan hämmennyksen keskellä?</p>
+      </div>
+      <div class="index-token">
+        <h3>Inho</h3>
+        <img src="images/disgusted_turtle.png" alt="Inho" class="index-badge-img" id="image-disgust">
+        <p>tässä tekstiä</p>
+      </div>
+      <div class="index-token">
+        <h3>Viha</h3>
+        <img src="images/angry_cat.png" alt="Viha" class="index-badge-img" id="image-anger">
+        <p>tässä tekstiä</p>
+      </div>
     </div>
+   </div>
+
+   <div class="center-button">
     <button class="gameButton" onclick="location.href='token.html'">Aloitetaan seikkailu tunteiden maailmassa!</button>
+  </div>
+
   </article>
 
   <footer>
