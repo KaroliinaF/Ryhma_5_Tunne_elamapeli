@@ -30,6 +30,11 @@ header {
   width: 100%;
 }
 
+.logo img {
+  height: 200px;
+  width: 200px;
+}
+
 p {
   margin-top: 20px;
 }
@@ -187,6 +192,10 @@ hr {
         height: 80px;
         line-height: 60px;
         font-size: 0.8rem;
+    }
+    .logo img {
+        width: 100px;
+        height: 100px;
     }
   }
   
