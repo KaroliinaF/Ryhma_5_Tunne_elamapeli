@@ -90,21 +90,42 @@ background-color: #EFF8F1;
 }
 
 /* Home Page Content */
-#animals {
-display: flex; 
-flex-wrap: wrap; 
-gap: 20px; 
-justify-content: space-between; 
-text-align: center;
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Kolme saraketta */
+  gap: 20px; /* Väli elementtien välillä */
+  padding: 20px;
+  justify-content: center;
+  align-items: start;
+  background-color: #1A533D;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#animals div {
-width: 100px; 
-flex: 1 1 100px; 
+.index-token {
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #255B4E;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#animals img {
-width: 100px;
+.index-badge-img {
+  width: 100px; 
+  height: auto; 
+  margin-bottom: 10px;
+  display: block; 
+  filter: none; 
+}
+
+.index-token:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* Sections */
@@ -114,21 +135,30 @@ display: flex;
 }
 
 /* Game Button */
+
 .gameButton {
-background-color: #255B4E; 
-color: #EFF8F1;
-border: none;
-padding: 20px;
-border-radius: 50%;
-margin-top: 30px;
-margin-left: 30px;
-cursor: pointer;
-transition: background-color 0.3s;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #085643;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .gameButton:hover {
-background-color: #0c2720; 
-color: #EFF8F1;
+  background-color: #0C2720;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; 
 }
 
 /* Footer */
