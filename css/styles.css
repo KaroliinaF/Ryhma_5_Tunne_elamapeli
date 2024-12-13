@@ -1142,3 +1142,14 @@ hr {
   #disgustviewMarksButton:hover , #disgustplayAgainButton:hover {
   background-color: #085643;
 }
+
+.disgustcorrect {
+  background-color: #4CAF50;
+    color: white;
+}
+
+.disgustwrong {
+  background-color: #b9251b;
+    color: white;
+}
+
