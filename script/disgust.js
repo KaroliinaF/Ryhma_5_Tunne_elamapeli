@@ -89,7 +89,7 @@ function showResults() { //kysytty tekoälyltä apua siihen, että lopussa näky
                 document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Höh, harjoittele vielä taitojasi uudestaan!`
             }}
     document.getElementById("disgustviewMarksButton").addEventListener("click", () => {
-        window.location.href = "./token.html";
+        window.location.href = "../token.html";
     })
     document.getElementById("disgustplayAgainButton").addEventListener("click", () => {
         score=0
