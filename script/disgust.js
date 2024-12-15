@@ -1,27 +1,27 @@
 const questions = [
     {
         question: "Mikä näistä voi aiheuttaa inhoa?",
-        answers: ["aurinko", "ruusun terälehti", "kärpänen ruoassa"],
+        answers: ["kissa", "koira", "hämähäkki"],
         correct: 2
     },
     {
-        question: "Mikä näistä hajuista on inhottava?",
-        answers: ["saippua", "oksennus", "glögi"],
+        question: "Mikä näistä voi olla ällöttävää?",
+        answers: ["vaahtokarkki", "veri", "glitteri"],
         correct: 1
     },
     {
-        question: "Mitä teet kun näet inhottavan ötökän?",
-        answers: ["kohtaat sen rauhallisesti", "kiljut", "sekoat"],
+        question: "Mikä näistä haisee pahalta?",
+        answers: ["homejuusto", "kaneli", "banaani"],
         correct: 0
     },
     {
-        question: "Mikä näistä ei tunnu inhottavalta?",
+        question: "Mikä näistä EI tunnu inhottavalta?",
         answers: ["märät sukat kylmällä ilmalla", "hiuskarva ruoan seassa", "jäätelö kuumana päivänä"],
         correct: 2
     },
     {
-        question: "Mikä näistä kuulostaa inhokkiruoalta?",
-        answers: [" tuore makaronilaatikko", "burgeriateria", "kylmä kaurapuuro"],
+        question: "Mikä näistä kuulostaa pahalta ruoalta?",
+        answers: [" tuore makaronilaatikko", "burgeriateria", "palanut kaurapuuro"],
         correct: 2
     },
     {
@@ -35,18 +35,18 @@ const questions = [
         correct: 1
     },
     {
-        question: "Mitä teet kun näet inhottavan ötökän?",
-        answers: ["kohtaat sen rauhallisesti", "kiljut", "sekoat"],
+        question: "Mitä ei kannata tehdä, jos sinua inhottaa?",
+        answers: ["itkupotkuraivarit", "keskustelu tunteista toisen kanssa", "poistut tilanteesta"],
         correct: 0
     },
     {
-        question: "Mikä näistä ei tunnu inhottavalta?",
-        answers: ["märät sukat kylmällä ilmalla", "hiuskarva ruoan seassa", "jäätelö kuumana päivänä"],
+        question: "Mikä teet kun kohtaat ötökän joka lentää sinua kohti?",
+        answers: ["juokset karkuun", "kiljut", "hengität syvään ja rauhoitut"],
         correct: 2
     },
     {
-        question: "Mikä näistä kuulostaa inhokkiruoalta?",
-        answers: [" tuore makaronilaatikko", "burgeriateria", "kylmä kaurapuuro"],
+        question: "Mikä näistä kuulostaa hyvältä?",
+        answers: ["kissanhiekkakeitto", "kalansilmäpaistos", "uunituore pitsa"],
         correct: 2
     }
 ]
@@ -116,14 +116,14 @@ function showResults() { //kysytty tekoälyltä apua siihen, että lopussa näky
     resultContainer.style.display = "block"
 
     if (score == 10) {
-        document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit kaikki vastaukset! JEE`
+        document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit kaikki vastaukset! JEE! Mene nyt testaamaan muita pelejä ja katso saatko kaikki merkit kerättyä!`
      }
         else {
             if (score>=6) {
-                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit vastauksia tosi hyvin! Katso onnistutko saamaan täydet pisteet :)`
+                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Hyvä sinä, tiesit vastauksia tosi hienosti! Kokeile vielä onnistutko saamaan täydet pisteet tai halutessasi testaa muita pelejä!`
             }
             else { 
-                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Höh, harjoittele vielä taitojasi uudestaan!`
+                document.getElementById("finalScore").textContent =` Sait ${score} pistettä 10:stä! Höh, harjoittele vielä taitojasi uudestaan! Lue kysymykset ja vastaukset tarkasti niin saat varmasti ensi kierroksella paremmat pisteet!`
             }}
     document.getElementById("disgustviewMarksButton").addEventListener("click", () => {
         window.location.href = "../token.html"
