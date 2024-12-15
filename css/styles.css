@@ -594,6 +594,16 @@ hr {
   background-color: #7C322F;
 }
 
+#token-total-points-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto; 
+  padding: 50px;
+}
+
 /* Responsiivisuus */
 @media (max-width: 768px) {
   .token-reset-button {
