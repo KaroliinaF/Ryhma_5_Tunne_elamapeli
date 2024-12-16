@@ -44,6 +44,12 @@ Pelillistämisen avulla sovellus motivoi käyttäjiä oppimaan tunteiden käsitt
 ## Käyttöohjeet
 
 1. Kloonaa repositorio paikalliselle koneellesi:
+   ```bash
+   git clone <repository-url>
+
+
+## Linkki sivun julkaisuun:
+
    [Tunteisiin sivut](https://karoliinaf.github.io/Ryhma_5_Tunne_elamapeli/)
    
 
